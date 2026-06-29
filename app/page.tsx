@@ -1,65 +1,248 @@
-import Image from "next/image";
+const apps = [
+  {
+    icon: "💰",
+    name: "Bütçem",
+    href: "https://apps.apple.com",
+    rating: null,
+    reviewCount: null,
+    description:
+      "Kişisel bütçe takibi için yerel-öncelikli uygulama. Tüm veriler yalnızca cihazınızda saklanır.",
+  },
+];
+
+function Stars({ rating }: { rating: number }) {
+  const full = Math.floor(rating);
+  const hasHalf = rating % 1 >= 0.5;
+  const empty = 5 - full - (hasHalf ? 1 : 0);
+  return (
+    <span
+      aria-label={`${rating} out of 5 stars`}
+      style={{ color: "var(--star)", fontSize: "11px", letterSpacing: "1px" }}
+    >
+      {"★".repeat(full)}
+      {hasHalf ? "½" : ""}
+      {"☆".repeat(empty)}
+    </span>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        background: "var(--bg)",
+        color: "var(--fg)",
+      }}
+    >
+      {/* Header */}
+      <header
+        style={{
+          maxWidth: 720,
+          margin: "0 auto",
+          padding: "56px 24px 40px",
+          width: "100%",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            marginBottom: 12,
+          }}
+        >
+          <div
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 10,
+              background: "var(--card-bg)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 24,
+              flexShrink: 0,
+            }}
+          >
+            🛠️
+          </div>
+          <h1
+            style={{
+              fontSize: 18,
+              fontWeight: 600,
+              letterSpacing: "-0.3px",
+            }}
+          >
+            EasyCraft Apps
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <p
+          style={{
+            fontSize: 15,
+            color: "var(--fg-secondary)",
+            lineHeight: 1.55,
+            maxWidth: 460,
+          }}
+        >
+          An app studio crafting quality experiences for Apple platforms
+        </p>
+      </header>
+
+      {/* Divider */}
+      <div
+        style={{
+          maxWidth: 720,
+          margin: "0 auto",
+          width: "100%",
+          padding: "0 24px",
+        }}
+      >
+        <hr style={{ border: "none", borderTop: "1px solid var(--border)" }} />
+      </div>
+
+      {/* App Grid */}
+      <main
+        style={{
+          maxWidth: 720,
+          margin: "0 auto",
+          padding: "40px 24px",
+          width: "100%",
+          flex: 1,
+        }}
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))",
+            gap: "36px 28px",
+          }}
+        >
+          {apps.map((app) => (
+            <article key={app.name}>
+              <div
+                style={{
+                  width: 64,
+                  height: 64,
+                  borderRadius: 14,
+                  background: "var(--card-bg)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 32,
+                  marginBottom: 12,
+                }}
+              >
+                {app.icon}
+              </div>
+
+              <a
+                href={app.href}
+                style={{
+                  display: "block",
+                  fontSize: 15,
+                  fontWeight: 600,
+                  color: "var(--link)",
+                  marginBottom: 5,
+                  textDecoration: "none",
+                }}
+              >
+                {app.name}
+              </a>
+
+              {app.rating !== null && (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 5,
+                    marginBottom: 8,
+                  }}
+                >
+                  <Stars rating={app.rating} />
+                  <span style={{ fontSize: 12, color: "var(--fg-secondary)" }}>
+                    {app.rating} ({app.reviewCount})
+                  </span>
+                </div>
+              )}
+
+              <p
+                style={{
+                  fontSize: 13,
+                  color: "var(--fg-secondary)",
+                  lineHeight: 1.6,
+                }}
+              >
+                {app.description}
+              </p>
+            </article>
+          ))}
         </div>
       </main>
+
+      {/* Divider */}
+      <div
+        style={{
+          maxWidth: 720,
+          margin: "0 auto",
+          width: "100%",
+          padding: "0 24px",
+        }}
+      >
+        <hr style={{ border: "none", borderTop: "1px solid var(--border)" }} />
+      </div>
+
+      {/* Footer */}
+      <footer
+        style={{
+          maxWidth: 720,
+          margin: "0 auto",
+          width: "100%",
+          padding: "0 24px",
+        }}
+      >
+        <div
+          style={{
+            padding: "20px 0 36px",
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "6px 12px",
+            alignItems: "center",
+          }}
+        >
+          <span style={{ fontSize: 13, color: "var(--fg-secondary)" }}>
+            © 2025 EasyCraft Apps
+          </span>
+          <span style={{ fontSize: 13, color: "var(--fg-tertiary)" }}>·</span>
+          <span style={{ fontSize: 13, color: "var(--fg-secondary)" }}>
+            Made with ♥
+          </span>
+          <span style={{ fontSize: 13, color: "var(--fg-tertiary)" }}>·</span>
+          <a
+            href="#"
+            style={{
+              fontSize: 13,
+              color: "var(--fg-secondary)",
+              textDecoration: "none",
+            }}
+          >
+            Privacy Policy
+          </a>
+          <span style={{ fontSize: 13, color: "var(--fg-tertiary)" }}>·</span>
+          <a
+            href="#"
+            style={{
+              fontSize: 13,
+              color: "var(--fg-secondary)",
+              textDecoration: "none",
+            }}
+          >
+            Contact
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
