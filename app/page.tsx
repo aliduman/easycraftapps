@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const apps = [
   {
     icon: "💰",
@@ -50,34 +52,45 @@ export default function Home() {
           style={{
             display: "flex",
             alignItems: "center",
+            justifyContent: "space-between",
             gap: 12,
             marginBottom: 12,
           }}
         >
-          <div
-            style={{
-              width: 44,
-              height: 44,
-              borderRadius: 10,
-              background: "var(--card-bg)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 24,
-              flexShrink: 0,
-            }}
-          >
-            🛠️
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <div
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 10,
+                background: "var(--card-bg)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 24,
+                flexShrink: 0,
+              }}
+            >
+              🛠️
+            </div>
+            <h1
+              style={{
+                fontSize: 18,
+                fontWeight: 600,
+                letterSpacing: "-0.3px",
+              }}
+            >
+              EasyCraft Apps
+            </h1>
           </div>
-          <h1
-            style={{
-              fontSize: 18,
-              fontWeight: 600,
-              letterSpacing: "-0.3px",
-            }}
-          >
-            EasyCraft Apps
-          </h1>
+          <nav>
+            <Link
+              href="/about"
+              style={{ fontSize: 14, color: "var(--fg-secondary)" }}
+            >
+              Hakkında
+            </Link>
+          </nav>
         </div>
         <p
           style={{
@@ -179,6 +192,48 @@ export default function Home() {
               </p>
             </article>
           ))}
+
+          {/* Yakında gelecek uygulamalar için yer tutucular */}
+          {[1, 2].map((i) => (
+            <article key={`placeholder-${i}`} style={{ opacity: 0.6 }}>
+              <div
+                style={{
+                  width: 64,
+                  height: 64,
+                  borderRadius: 14,
+                  background: "var(--bg)",
+                  border: "1px dashed var(--border)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 24,
+                  color: "var(--fg-tertiary)",
+                  marginBottom: 12,
+                }}
+              >
+                +
+              </div>
+              <p
+                style={{
+                  fontSize: 15,
+                  fontWeight: 600,
+                  color: "var(--fg-tertiary)",
+                  marginBottom: 5,
+                }}
+              >
+                Yeni uygulama
+              </p>
+              <p
+                style={{
+                  fontSize: 13,
+                  color: "var(--fg-tertiary)",
+                  lineHeight: 1.6,
+                }}
+              >
+                Sıradaki uygulamamız hazır olduğunda burada yer alacak.
+              </p>
+            </article>
+          ))}
         </div>
       </main>
 
@@ -213,11 +268,7 @@ export default function Home() {
           }}
         >
           <span style={{ fontSize: 13, color: "var(--fg-secondary)" }}>
-            © 2025 EasyCraft Apps
-          </span>
-          <span style={{ fontSize: 13, color: "var(--fg-tertiary)" }}>·</span>
-          <span style={{ fontSize: 13, color: "var(--fg-secondary)" }}>
-            Made with ♥
+            © 2026 EasyCraft Apps - İstanbul&apos;da ♥ ile yapıldı
           </span>
           <span style={{ fontSize: 13, color: "var(--fg-tertiary)" }}>·</span>
           <a
