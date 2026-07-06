@@ -5,10 +5,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "EasyCraft Apps",
   description: "An app studio crafting quality experiences for Apple platforms",
-  icons: {
-    icon: "/favicon.png",
-    apple: "/icon.png",
-  },
   openGraph: {
     title: "EasyCraft Apps",
     description:
