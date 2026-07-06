@@ -26,7 +26,7 @@ export default function Home() {
 
   const apps = [
     {
-      icon: "/apps/butcem/logo-92.png",
+      icon: "/apps/butcem/app_icon.png",
       name: "Bütçem",
       href: "/butcem",
       rating: null as number | null,

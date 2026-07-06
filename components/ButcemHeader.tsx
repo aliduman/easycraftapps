@@ -44,7 +44,7 @@ export default function ButcemHeader() {
           }}
         >
           <Image
-            src="/apps/butcem/logo-92.png"
+            src="/apps/butcem/app_icon.png"
             alt="Bütçem logo"
             width={30}
             height={30}

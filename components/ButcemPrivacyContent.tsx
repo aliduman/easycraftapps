@@ -38,7 +38,7 @@ export default function ButcemPrivacyContent() {
           }}
         >
           <Image
-            src="/apps/butcem/logo-92.png"
+            src="/apps/butcem/app_icon.png"
             alt="Bütçem icon"
             width={56}
             height={56}

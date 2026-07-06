@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Bütçem — Kişisel Bütçe Takibi",
     description:
       "Gelir ve giderlerinizi kolayca takip edin. Yerel-öncelikli kişisel bütçe uygulaması.",
-    images: ["/apps/butcem/logo-92.png"],
+    images: ["/apps/butcem/app_icon.png"],
   },
 };
 

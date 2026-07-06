@@ -176,7 +176,7 @@ export default function ButcemContent() {
         }}
       >
         <Image
-          src="/apps/butcem/logo-92.png"
+          src="/apps/butcem/app_icon.png"
           alt="Bütçem icon"
           width={92}
           height={92}
