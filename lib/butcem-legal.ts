@@ -7,13 +7,13 @@ export const butcemLegal = {
           "title": "Veriler ve kullanım amaçları",
           "paragraphs": [
             "Bütçem, EasyCraft Apps tarafından sunulan kişisel bütçe uygulamasıdır. İşlemler, kategoriler, etiketler, hesaplar ve bütçeler; bütçe takibi, raporlama ve seçtiğiniz eşzamanlama veya aktarım işlevleri için işlenir.",
-            "Oturum açtığınızda sağlayıcının paylaştığı profil adı, e-posta adresi ve varsa profil fotoğrafı cihazınızda saklanır; profilinizi göstermek ve oturumunuzu yönetmek için kullanılır."
+            "Uygulama Sign in with Apple ve Google Sign-In seçenekleri sunar. Giriş sırasında ad, e-posta adresi, sağlayıcı kullanıcı kimliği ve isteğe bağlı profil fotoğrafı adresi işlenebilir. Bu bilgiler oturumu yönetmek ve kullanıcı profilini göstermek amacıyla cihazda saklanır."
           ]
         },
         {
           "title": "Core Data ve isteğe bağlı iCloud eşzamanlama",
           "paragraphs": [
-            "Finansal kayıtlar cihazınızda Core Data ile saklanır. iCloud/CloudKit eşzamanlamasını etkinleştirirseniz kayıtlar Apple’ın iCloud altyapısına da aktarılır ve aynı Apple hesabını kullanan cihazlar arasında eşzamanlanabilir. Bu nedenle verilerin yalnızca cihazda tutulduğu söylenemez.",
+            "Finansal veriler varsayılan olarak cihazda Core Data ile saklanır. Kullanıcı iCloud eşzamanlamasını etkinleştirirse veriler Apple CloudKit aracılığıyla kullanıcının özel iCloud hesabında saklanabilir ve kullanıcının cihazları arasında eşzamanlanabilir. Paylaşılan hanelere ait kayıtlar ise kullanıcının seçtiği paylaşım ve katılımcı izinlerine göre CloudKit paylaşımı kapsamında diğer katılımcılara açılabilir.",
             "iCloud kullanımı Apple hesabınıza, iCloud ayarlarına, bağlantıya ve Apple hizmetlerinin kullanılabilirliğine bağlıdır. Eşzamanlamayı kapatmak, daha önce buluta aktarılmış kayıtları kendiliğinden silmez."
           ]
         },
@@ -28,15 +28,29 @@ export const butcemLegal = {
         {
           "title": "Google Sheets aktarımı",
           "paragraphs": [
-            "Google Sheets özelliği uygulamada mevcuttur ve isteğe bağlıdır. Bağlantı kurup aktarımı kullandığınızda seçtiğiniz bütçe verileri Google hesabınızdaki e-tabloya gönderilir. E-tabloya verdiğiniz paylaşım izinleri, bu kayıtlara kimlerin erişebileceğini belirler.",
+            "Google Sheets özelliği uygulamada mevcuttur. Kullanıcı isteğe bağlı olarak Google hesabını bağlayabilir ve finansal verilerini kendi Google E-Tablolar belgesine aktarabilir. Bu işlem yalnızca kullanıcının açık talebiyle gerçekleştirilir. Uygulama drive.file (https://www.googleapis.com/auth/drive.file) yetkisini kullanır ve yalnızca uygulama tarafından oluşturulan veya kullanıcı tarafından seçilip uygulamaya erişim izni verilen ilgili dosyalara erişir; Google Drive’daki tüm dosyalara genel erişim istemez. E-tabloya verdiğiniz paylaşım izinleri, aktarılan kayıtlara kimlerin erişebileceğini belirler.",
             "Google bağlantısını kaldırmak, önceden oluşturulan e-tabloları silmez. Google ve Apple, kendi hizmetlerinde verileri kendi gizlilik politikalarına göre işler."
+          ]
+        },
+        {
+          "title": "Kullanılan üçüncü taraf servisleri",
+          "paragraphs": [
+            "Google servisleri: Google Sign-In ve Google OAuth kimlik doğrulama ve kullanıcı izinlerini yönetmek için; Google Sheets API finansal verileri e-tabloya aktarmak için; Google Drive API ilgili dosyalara drive.file yetkisi kapsamında erişmek için kullanılır. Google Gizlilik Politikası bağlantısı aşağıda yer alır.",
+            "Apple servisleri: Sign in with Apple giriş için; iCloud/CloudKit isteğe bağlı eşzamanlama ve hane paylaşımı için; StoreKit ve App Store abonelikleri Premium satın alma ve doğrulama için kullanılır. Apple’ın push notification altyapısı (APNs), CloudKit değişiklik bildirimleri ve eşzamanlama için kullanılabilir. Bildirim ve eşzamanlama davranışı cihaz ve iCloud ayarlarına bağlıdır.",
+            "Bu servisler kullanıldığında ilgili kimlik doğrulama, dosya, eşzamanlama veya işlem bilgileri seçtiğiniz işlev için ilgili sağlayıcı tarafından işlenebilir. Apple ve Google’ın kendi gizlilik politikaları ilgili hizmetlere ayrıca uygulanır."
+          ]
+        },
+        {
+          "title": "Premium abonelik ve ödeme bilgileri",
+          "paragraphs": [
+            "Premium abonelik satın alma ve doğrulama işlemleri Apple StoreKit üzerinden gerçekleştirilir. Ödeme bilgileri uygulama geliştiricisi tarafından görülmez veya saklanmaz. Uygulama, Premium erişimini belirlemek için Apple’ın sağladığı satın alma ve abonelik durumu bilgilerini kullanır. Abonelik iptali ve iade işlemleri Kullanım Koşulları’nda açıklanır."
           ]
         },
         {
           "title": "Veri, profil ve bağlantı silme",
           "paragraphs": [
-            "Cihazdaki bütçe kayıtlarını uygulamadaki kayıt yönetimi üzerinden silebilirsiniz. Uygulamayı cihazdan tamamen silmek yerel uygulama verilerini kaldırır; uygulamayı yalnızca arşivlemek/boşaltmak aynı işlem değildir. Bulut kopyaları ve cihaz yedekleri ayrıca ele alınmalıdır.",
-            "iCloud eşzamanlaması kullanıyorsanız kayıt silme işlemlerinin bağlı cihazlara ve iCloud’a yansıması için eşzamanlamanın tamamlanmasını bekleyin. Apple’ın iCloud saklama alanı yönetiminden Bütçem’e ait verileri ayrıca yönetebilirsiniz. Diğer cihazlarda ve yedeklerde kalan kopyaları da kontrol edin.",
+            "Kullanıcı uygulama içindeki profil/ayarlar ekranından hesabını ve ilişkili verilerini silme talebinde bulunabilir. Silme işlemi tamamlandığında cihazdaki ilişkili veriler silinir. Uygulamanın cihazdan kaldırılması yerel uygulama verilerini kaldırır; iCloud’da eşzamanlanmış veriler Apple hesabında kalabilir. Uygulamayı yalnızca arşivlemek/boşaltmak, tamamen kaldırmakla aynı işlem değildir.",
+            "iCloud eşzamanlaması kullanılıyorsa ilgili özel CloudKit kayıtlarının silinmesi eşzamanlama yoluyla diğer cihazlara iletilebilir. İşlemin bağlı cihazlara yansıması için eşzamanlamanın tamamlanması gerekir. Paylaşılan hanelere ait verilerin silinmesi, kullanıcının sahiplik ve paylaşım durumuna bağlıdır; paylaşımdan ayrılmak, diğer katılımcılardaki tüm kayıtların silindiği anlamına gelmez. Diğer cihazlarda ve yedeklerde kalan kopyaları ayrıca kontrol edin.",
             "Google Sheets kopyalarını Google Drive/Sheets üzerinden silip çöp kutusunu boşaltın. Google hesabınızın üçüncü taraf bağlantıları bölümünden Bütçem’in erişimini kaldırabilirsiniz. Apple hesabınızın “Apple ile Giriş” bölümünden Bütçem bağlantısını durdurabilirsiniz. Erişimi kaldırmak kayıtları tek başına silmez.",
             "Bütçem profilinin ve uygulamayla ilişkili kişisel verilerin silinmesi veya silme işlemlerinde yardım için privacy@easycraftapps.com adresine başvurabilirsiniz. Talebin size ait olduğu doğrulanabilir; yalnızca cihazınızda veya kişisel bulut hesabınızda bulunan kopyalar için işlemi sizin tamamlamanız gerekebilir. Apple veya Google hesabınızı silmeniz gerekmez.",
             "Oturumu kapatmak, uygulamayı silmek veya profil silme talebi göndermek App Store aboneliğini iptal etmez. Aboneliği Apple hesabınızın Abonelikler bölümünden ayrıca iptal edin."
@@ -46,7 +60,7 @@ export const butcemLegal = {
           "title": "Saklama, güvenlik ve haklarınız",
           "paragraphs": [
             "Yerel veriler silinene kadar cihazda; iCloud ve Sheets kopyaları ise ilgili hizmette silinene kadar saklanabilir. Sağlayıcıların yedekleme ve saklama kuralları ayrıca geçerlidir. Cihazınızı ve hesaplarınızı koruyun; hiçbir saklama veya eşzamanlama yöntemi mutlak güvenlik ya da kesintisizlik garantisi vermez.",
-            "Uygulanabilir mevzuat kapsamında kişisel verileriniz hakkında bilgi, erişim, düzeltme ve silme taleplerinizi privacy@easycraftapps.com adresine iletebilirsiniz. Destek yazışmalarında paylaştığınız bilgiler talebinizi yanıtlamak için kullanılır."
+            "Türkiye’deki kullanıcılar uygulanabilir KVKK hükümleri kapsamında; Avrupa Birliği’ndeki kullanıcılar ise uygulanabilir GDPR hükümleri kapsamında verilerine erişim, düzeltme ve silme taleplerini privacy@easycraftapps.com adresine iletebilir. Başvurunun size ait olduğunu doğrulamak için gerekli bilgiler istenebilir. Talepler uygulanabilir mevzuattaki koşullar ve süreler çerçevesinde değerlendirilir. Genel destek için info@easycraftapps.com adresine ulaşabilirsiniz. Destek yazışmalarında paylaştığınız bilgiler talebinizi yanıtlamak için kullanılır."
           ]
         },
         {
@@ -114,13 +128,13 @@ export const butcemLegal = {
           "title": "Data and purposes",
           "paragraphs": [
             "Bütçem is a personal budgeting app provided by EasyCraft Apps. Transactions, categories, tags, accounts and budgets are processed for budget tracking, reporting, and the sync or export features you choose.",
-            "When you sign in, the profile name, email address and profile photo, if supplied by the provider, are stored on your device to display your profile and manage your session."
+            "The app offers Sign in with Apple and Google Sign-In. During sign-in, your name, email address, provider user identifier and optional profile photo URL may be processed. This information is stored on your device to manage your session and display your profile."
           ]
         },
         {
           "title": "Core Data and optional iCloud sync",
           "paragraphs": [
-            "Financial records are stored locally using Core Data. If you enable iCloud/CloudKit sync, records are also transferred to Apple’s iCloud infrastructure and may sync between devices using the same Apple Account. Data is therefore not exclusively stored on your device.",
+            "Financial data is stored on your device using Core Data by default. If you enable iCloud sync, data may be stored in your private iCloud account through Apple CloudKit and synced between your devices. Shared household records may also be made available to participants through CloudKit sharing according to your sharing choices and participant permissions.",
             "iCloud depends on your Apple Account, settings, connectivity and Apple service availability. Disabling sync does not automatically delete records already uploaded."
           ]
         },
@@ -135,15 +149,29 @@ export const butcemLegal = {
         {
           "title": "Google Sheets export",
           "paragraphs": [
-            "Google Sheets is available and optional. When you connect and use export, selected budget data is sent to a spreadsheet in your Google account. Spreadsheet sharing permissions determine who can access those records.",
+            "Google Sheets is an existing feature. You may optionally connect your Google account and export financial data to your own Google spreadsheet. Export takes place only at your explicit request. The app uses the drive.file scope (https://www.googleapis.com/auth/drive.file) and accesses only relevant files created by the app or selected by you and authorized for the app; it does not request general access to every file in Google Drive. Spreadsheet sharing permissions determine who can access exported records.",
             "Disconnecting Google does not delete existing spreadsheets. Google and Apple process data within their services under their respective privacy policies."
+          ]
+        },
+        {
+          "title": "Third-party services used",
+          "paragraphs": [
+            "Google services: Google Sign-In and Google OAuth are used for authentication and permissions; the Google Sheets API exports financial data to spreadsheets; the Google Drive API accesses relevant files within the drive.file scope. A link to the Google Privacy Policy is provided below.",
+            "Apple services: Sign in with Apple is used for sign-in; iCloud/CloudKit for optional sync and household sharing; StoreKit and App Store subscriptions for Premium purchases and verification. Apple’s push notification infrastructure (APNs) may be used for CloudKit change notifications and synchronization. Notification and sync behavior depends on device and iCloud settings.",
+            "When these services are used, relevant authentication, file, sync or transaction information may be processed by the provider for the function you choose. Apple’s and Google’s privacy policies also apply to their respective services."
+          ]
+        },
+        {
+          "title": "Premium subscriptions and payment information",
+          "paragraphs": [
+            "Premium subscription purchases and verification are performed through Apple StoreKit. Payment details are not viewed or stored by the app developer. The app uses purchase and subscription status information supplied by Apple to determine Premium access. Subscription cancellation and refund procedures are described in the Terms of Use."
           ]
         },
         {
           "title": "Deleting data, profiles and connections",
           "paragraphs": [
-            "You can delete budget records through the app’s record management. Fully deleting the app removes local app data; offloading the app is different. Cloud copies and device backups need separate attention.",
-            "If you use iCloud sync, allow record deletions to sync to iCloud and connected devices. You can also manage Bütçem data through Apple’s iCloud storage management. Check copies on other devices and in backups.",
+            "You may request deletion of your account and associated data from the in-app profile/settings screen. Associated on-device data is deleted when the deletion process completes. Removing the app from your device removes local app data; data synced to iCloud may remain in your Apple Account. Offloading the app is different from fully deleting it.",
+            "If iCloud sync is enabled, deletion of the relevant private CloudKit records may propagate to other devices through synchronization. Synchronization must complete for changes to reach connected devices. Deletion of shared household data depends on your ownership and sharing status; leaving a share does not mean every record held by other participants is deleted. Check copies remaining on other devices and in backups separately.",
             "Delete exported spreadsheets in Google Drive/Sheets and empty the trash. Revoke Bütçem access in your Google account’s third-party connections. Stop the Bütçem connection in your Apple Account’s Sign in with Apple settings. Revoking access alone does not erase records.",
             "To request deletion of your Bütçem profile and associated personal data, or help with deletion, contact privacy@easycraftapps.com. We may verify that the request is yours; you may need to remove copies held solely on your device or personal cloud account yourself. You do not need to delete your Google or Apple account.",
             "Signing out, deleting the app or requesting profile deletion does not cancel an App Store subscription. Cancel it separately in your Apple Account’s Subscriptions settings."
@@ -153,7 +181,7 @@ export const butcemLegal = {
           "title": "Retention, security and your rights",
           "paragraphs": [
             "Local records may remain until deleted on your device; iCloud and Sheets copies may remain until deleted in those services. Provider retention and backup rules also apply. Protect your device and accounts; no storage or sync method guarantees absolute security or uninterrupted availability.",
-            "Under applicable law, you may request information, access, correction or deletion of personal data at privacy@easycraftapps.com. Information you share in support correspondence is used to respond to your request."
+            "Users in Türkiye may send access, correction and deletion requests under applicable KVKK provisions, and users in the European Union may send such requests under applicable GDPR provisions, to privacy@easycraftapps.com. Information necessary to verify that the request is yours may be requested. Requests are assessed subject to the conditions and deadlines of applicable law. For general support, contact info@easycraftapps.com. Information shared in support correspondence is used to respond to your request."
           ]
         },
         {

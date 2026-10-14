@@ -4,6 +4,7 @@ import Link from "next/link";
 import ButcemHeader from "./ButcemHeader";
 import { useI18n } from "../lib/i18n";
 import { butcemLegal } from "../lib/butcem-legal";
+import { CONTACT_EMAIL } from "./ContactBody";
 
 export default function ButcemLegalContent({ kind }: { kind: "privacy" | "terms" }) {
   const { lang, t } = useI18n();
@@ -28,7 +29,7 @@ export default function ButcemLegalContent({ kind }: { kind: "privacy" | "terms"
         <p style={{ color: "var(--fg-secondary)", marginBottom: 8 }}>Bütçem · EasyCraft Apps</p>
         <h1 style={{ fontSize: 28, fontWeight: 700, lineHeight: 1.3 }}>{content.title}</h1>
         <p style={{ fontSize: 13, color: "var(--fg-tertiary)", marginTop: 16, marginBottom: 40 }}>
-          {tr ? "Son güncelleme: 14 Ekim 2026" : "Last updated: October 14, 2026"}
+          {tr ? `${kind === "privacy" ? "Yürürlük ve son güncelleme" : "Son güncelleme"}: 14 Ekim 2026` : `${kind === "privacy" ? "Effective and last updated" : "Last updated"}: October 14, 2026`}
         </p>
         {content.sections.map((section, index) => (
           <section key={section.title} style={{ marginBottom: 32 }}>
@@ -38,7 +39,8 @@ export default function ButcemLegalContent({ kind }: { kind: "privacy" | "terms"
         ))}
         <section>
           <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12 }}>{tr ? "İletişim ve ilgili bağlantılar" : "Contact and related links"}</h2>
-          <p><a href="mailto:privacy@easycraftapps.com" style={{ color: "var(--link)", overflowWrap: "anywhere" }}>privacy@easycraftapps.com</a></p>
+          <p>{tr ? "Gizlilik, erişim, düzeltme ve silme talepleri: " : "Privacy, access, correction and deletion requests: "}<a href="mailto:privacy@easycraftapps.com" style={{ color: "var(--link)", overflowWrap: "anywhere" }}>privacy@easycraftapps.com</a></p>
+          <p style={{ marginTop: 12 }}>{tr ? "Destek: " : "Support: "}<a href={`mailto:${CONTACT_EMAIL}`} style={{ color: "var(--link)", overflowWrap: "anywhere" }}>{CONTACT_EMAIL}</a></p>
           <ul style={{ paddingLeft: 20, marginTop: 12 }}>
             {links.map(link => <li key={link.href} style={{ marginBottom: 8 }}><a href={link.href} style={{ color: "var(--link)" }}>{link.label}</a></li>)}
           </ul>
