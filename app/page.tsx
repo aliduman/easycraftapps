@@ -261,6 +261,9 @@ export default function Home() {
             {t.common.footerCopyright}
           </span>
           <span style={{ fontSize: 13, color: "var(--fg-tertiary)" }}>·</span>
+          <Link href="/butcem/terms" style={{ fontSize: 13, color: "var(--fg-secondary)" }}>
+            {t.common.footerTerms}
+          </Link>
           <Link
             href="/butcem/privacy"
             style={{
