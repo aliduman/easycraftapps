@@ -29,7 +29,9 @@ export default function ButcemLegalContent({ kind }: { kind: "privacy" | "terms"
         <p style={{ color: "var(--fg-secondary)", marginBottom: 8 }}>Bütçem · EasyCraft Apps</p>
         <h1 style={{ fontSize: 28, fontWeight: 700, lineHeight: 1.3 }}>{content.title}</h1>
         <p style={{ fontSize: 13, color: "var(--fg-tertiary)", marginTop: 16, marginBottom: 40 }}>
-          {tr ? `${kind === "privacy" ? "Yürürlük ve son güncelleme" : "Son güncelleme"}: 14 Ekim 2026` : `${kind === "privacy" ? "Effective and last updated" : "Last updated"}: October 14, 2026`}
+          {tr
+            ? `${kind === "privacy" ? "Yürürlük ve son güncelleme: 25 Ekim 2026" : "Son güncelleme: 14 Ekim 2026"}`
+            : `${kind === "privacy" ? "Effective and last updated: October 25, 2026" : "Last updated: October 14, 2026"}`}
         </p>
         {content.sections.map((section, index) => (
           <section key={section.title} style={{ marginBottom: 32 }}>
